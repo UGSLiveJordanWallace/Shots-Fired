@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/Character Selection Screen.unity
+    guid: eea69d928dc365042877238e752fe22b
+  - enabled: 1
+    path: Assets/Scenes/Levels/level 1.unity
+    guid: d4b77f08bf12ae74e899f710008a1726
+  - enabled: 1
+    path: Assets/Scenes/Levels/level 2.unity
+    guid: fc506637f21888641995b46286d5b2bc
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/You Died Scene.unity
+    guid: 93908cbc686518b418334ea24d300144
+  m_configObjects: {}
