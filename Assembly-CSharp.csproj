@@ -80,13 +80,13 @@
     <Compile Include="Assets\ParallaxEffect.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\RegMovement.cs" />
+    <Compile Include="Assets\ShopManager.cs" />
     <Compile Include="Assets\SwitchScene.cs" />
     <Compile Include="Assets\Teleport.cs" />
     <Compile Include="Assets\Weapon.cs" />
     <Compile Include="Assets\WeaponHolder.cs" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
-    <None Include="Assets\Fonts\LICENSE.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

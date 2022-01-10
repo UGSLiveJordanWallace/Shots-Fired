@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay Run/Character Selection Screen.unity
     guid: eea69d928dc365042877238e752fe22b
   - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameHub.unity
+    guid: 591b3b87654b0c2428108f614802955f
+  - enabled: 1
     path: Assets/Scenes/Levels/level 1.unity
     guid: d4b77f08bf12ae74e899f710008a1726
   - enabled: 1
@@ -20,4 +23,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay Run/You Died Scene.unity
     guid: 93908cbc686518b418334ea24d300144
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Basic Pistol Equip.unity
+    guid: 38ea891863ac4ed4d9bfa1459f63c4f3
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Basic Assault Rifle Equip.unity
+    guid: 8b302e26f0573ff4da361bc8e7c10065
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Basic Uzi Equip.unity
+    guid: c6440d3949606a74d95a00a11c5d0ae9
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Basic Blaster Equip.unity
+    guid: 3ab584af416516e4286e0de70c7b84f0
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Kill Monger Equip.unity
+    guid: 700957db34e4ebd44b809f9135274904
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Rocket Launcher Equip.unity
+    guid: 420d7b10540e6db45bb95180395f03d1
+  - enabled: 1
+    path: Assets/Scenes/GamePlay Run/GameShopItems/Armagedon Equip.unity
+    guid: 8f9648ee877385344adec73a02aca615
   m_configObjects: {}

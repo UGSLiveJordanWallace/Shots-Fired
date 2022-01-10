@@ -22,6 +22,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Slider ammoLeftSlider;
     [SerializeField] private Image ammoLeftSliderImage;
 
+    // Specials
+    [Header("Extras: Audio")]
+    [SerializeField] private AudioClip armaReload;
+
     // Player Mouse Follow
     private Vector3 mousePos;
     private float angle;
@@ -179,6 +183,13 @@ public class Weapon : MonoBehaviour
                     currentAmountOfAmmunition--;
                 }
                 break;
+            case "Armagedon Pistol":
+                if (Input.GetMouseButtonDown(0))
+                {
+                    BasicShot();
+                    currentAmountOfAmmunition--;
+                }
+                break;
         }
     }
 
@@ -205,6 +216,9 @@ public class Weapon : MonoBehaviour
             case "Rocket Launcher":
                 maxAmmunition = 5;
                 break;
+            case "Armagedon Pistol":
+                maxAmmunition = 24;
+                break;
         }
         currentAmountOfAmmunition = maxAmmunition;
         ammoLeftSlider.maxValue = maxAmmunition;
@@ -229,7 +243,10 @@ public class Weapon : MonoBehaviour
     {
         isPickedUp = false;
         currentAmountOfAmmunition = maxAmmunition;
-        Debug.Log("Reloading...");
+        if (gameObject.name == "Armagedon Pistol")
+        {
+            PlayClipAtPoint(armaReload, transform.position);
+        }
     }
     public static void setPickedUpTrue()
     {

@@ -26,5 +26,9 @@ public class BulletPhysics : MonoBehaviour
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+        if (collision.gameObject.layer.Equals("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

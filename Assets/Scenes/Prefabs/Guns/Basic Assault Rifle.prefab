@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8490111024630207824
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8490111025188947752
 Transform:
   m_ObjectHideFlags: 0
@@ -127,13 +127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8490111025901733051}
-  bulletPrefab: {fileID: 8273605287204066025, guid: d1e35e1ced098384a8b96cee73ead8a4,
+  projectilePrefab: {fileID: 4625749156644116614, guid: e4bb2b69fdcd1c6419a5dbe5741aec62,
     type: 3}
   gunPrefab: {fileID: 8490111024630207825}
   firePrefab: {fileID: 2608482792762827485, guid: 502e1e80be9738e4080407484cd1aaca,
     type: 3}
   blastClip: {fileID: 0}
   gunFireClip: {fileID: 8300000, guid: 55b7f22e57c0dce4089b8e4ebe9ff913, type: 3}
+  rpgClip: {fileID: 0}
   blastAnimator: {fileID: 0}
   ammoLeftText: {fileID: 0}
   ammoLeftSlider: {fileID: 0}
@@ -153,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8490111025901733051
 Transform:
   m_ObjectHideFlags: 0

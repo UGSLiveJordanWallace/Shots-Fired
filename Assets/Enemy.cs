@@ -12,8 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Player player;
 
     // Various Points
-    private int basic = 5;
-    private int boss = 30;
+    private int basic = 30;
 
     private void Start()
     {

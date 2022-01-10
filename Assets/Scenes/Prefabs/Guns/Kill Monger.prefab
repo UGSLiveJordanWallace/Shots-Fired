@@ -45,17 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 600051802618262456}
-  bulletPrefab: {fileID: 8273605287204066025, guid: d1e35e1ced098384a8b96cee73ead8a4,
+  projectilePrefab: {fileID: 178573079428628729, guid: 98c398058020c804ca93b83c65bb0878,
     type: 3}
   gunPrefab: {fileID: 2613888309714623039}
   firePrefab: {fileID: 2608482792762827485, guid: 502e1e80be9738e4080407484cd1aaca,
     type: 3}
   blastClip: {fileID: 0}
   gunFireClip: {fileID: 8300000, guid: 918c6c21329d8d84d9c3a9d50ec73525, type: 3}
+  rpgClip: {fileID: 0}
   blastAnimator: {fileID: 0}
   ammoLeftText: {fileID: 0}
   ammoLeftSlider: {fileID: 0}
   ammoLeftSliderImage: {fileID: 0}
+  armaReload: {fileID: 0}
 --- !u!1 &2613888309714623039
 GameObject:
   m_ObjectHideFlags: 0

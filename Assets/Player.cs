@@ -19,15 +19,20 @@ public class Player : MonoBehaviour
     [SerializeField] public GameObject pointUIObject;
     [SerializeField] public SpriteRenderer spriteRenderer;
 
-    // Miscellaneous Necessities
+    // Points
     private int points;
 
+    // Level Completed
+    private bool levelCompleted = false;
+
+    // Processes
     private void Start()
     {
+        levelCompleted = false;
+        print(GetPoints());
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = CharacterSelector.spriteRenderer;
     }
-
     void Update()
     {
         InputProcessing();
@@ -35,18 +40,24 @@ public class Player : MonoBehaviour
         // The altitude of the player
         OnDepthEnter(transform.position.y);
     }
+    void InputProcessing()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+    }
 
+    // Point Handlers
     public void SendDeathMessage(int points)
     {
         Points(points);
     }
-
     public void Points(int point)
     {
         points += point;
         pointUI.text = points.ToString();
     }
-
     void OnDepthEnter(float y)
     {
         if (y <= -30 || y >= 120)
@@ -55,11 +66,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Restart()
-    {
-        SceneManager.LoadScene("You Died Scene");
-    }
-
+    // OnCollision and OnTrigger Event Handlers
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BuildPowerUp")
@@ -84,12 +91,15 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Landing")
         {
-            Landing();
+            if (!levelCompleted)
+            {
+                levelCompleted = true;
+                Landing();
+            }
         }
         else if (collision.gameObject.tag == "Untagged")
         {
@@ -98,21 +108,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    // GamePlay
+    void Restart()
+    {
+        SceneManager.LoadScene("You Died Scene");
+    }
     private void Landing()
     {
         PlayClipAtPoint(winClip, transform.position);
         tryAgainPrefab.SetActive(true);
         nextLevelPrefab.SetActive(true);
-    }
-
-    void InputProcessing()
-    {
-        if (Input.GetButtonDown("Cancel"))
+        if (CheckIfLocalStorageExists())
         {
-            Application.Quit();
+            AddToCurrentPoints(int.Parse(pointUI.text));
+        } else
+        {
+            savePoints();
         }
     }
 
+    // Audio
     public static AudioSource PlayClipAtPoint(AudioClip clip, Vector3 position)
     {
         var go = new GameObject("PlayAndForget");
@@ -122,5 +137,33 @@ public class Player : MonoBehaviour
         Destroy(go, clip.length);
         audioSource.Play();
         return audioSource;
+    }
+
+    // Point LocalStorage
+    public void savePoints()
+    {
+        PlayerPrefs.SetInt("UPS", int.Parse(pointUI.text));
+        PlayerPrefs.Save();
+    }
+    public void AddToCurrentPoints(int deposit)
+    {
+        if (CheckIfLocalStorageExists())
+        {
+            int currentPoints = GetPoints();
+            print(currentPoints);
+            currentPoints += deposit;
+            PlayerPrefs.SetInt("UPS", currentPoints);
+        } else
+        {
+            savePoints();
+        }
+    }
+    public bool CheckIfLocalStorageExists()
+    {
+        return PlayerPrefs.HasKey("UPS");
+    }
+    public int GetPoints()
+    {
+        return PlayerPrefs.GetInt("UPS");
     }
 }
